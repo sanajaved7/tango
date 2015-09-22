@@ -30,7 +30,6 @@ TEMPLATE_DIRS = (
     TEMPLATE_PATH,
 )
 
-
 # Application definition
 
 INSTALLED_APPS = (
