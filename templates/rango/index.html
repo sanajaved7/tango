@@ -7,10 +7,14 @@
 	</head>
 
 	<body>
-		<h1>Rango says...</h1>
-			<p>Hello world! <strong> {{ boldmessage }} </strong>
-			<br/>
-			<br/>
+		{% if user.is_authenticated %}
+			<h1> Rango says hello {{ user.username }}!</h1>
+		{% else %}
+			<h1>Rango says...</h1>
+				<p>Hello world! <strong> {{ boldmessage }} </strong>
+				<br/>
+				<br/>
+		{% endif %}
 		<h2>Top Categories of Pages </h2>
 		{% if categories %}
 			<ul>
@@ -33,6 +37,9 @@
 			<a href="/rango/add_category/">Add a New Category</a><br />
 			<br>
 			<a href="/rango/register/">Register Here</a>
+			<br>
+			<br>
+			<a href="/rango/login/">Login</a>
 
 	</body>
 </html>
