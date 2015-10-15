@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from rango.models import Category, Page
 from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
-from djang.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login
 
 def index(request):
 	category_list = Category.objects.order_by('-likes')[:5]
