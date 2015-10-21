@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'tango_with_django_project.urls'
 
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
-LOGIN_URL = '/rango/login/'
+LOGIN_URL = '/accounts/login/'
 
 
 # Database
@@ -94,3 +95,18 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
+
+#If true, users can register
+REGISTRATION_OPEN = True
+
+#One-week activation window, can be changed if necessary
+ACCOUNT_ACTIVATION_DAYS = 7
+
+#True means user will be automatically logged in after registration
+REGISTRATION_AUTO_LOGIN = True
+
+#Page users will be redirected to after they successfully log in
+LOGIN_REDIRECT_URL = '/rango/'
+
+#Where users are sent if they are NOT logged in successfully and are trying to access restricted pages
+LOGIN_URL = '/accounts/login/'
