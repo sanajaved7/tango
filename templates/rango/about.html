@@ -1,9 +1,15 @@
 {% extends 'rango/base.html' %}
+
 {% load staticfiles %}
 
-{% block body_block %}
+{% block title %}About{% endblock %}
 
-		<h1>Rango says...</h1>
+{% block body_block %}
+	<div class="page-header">
+			<h1>About</h1>
+	</div>
+	<div>
+		<h3>Rango says...</h3>
 			<p>Hello world! <strong></strong>
 			<br/>
 			<br/>
@@ -11,4 +17,5 @@
 			<br/>
 			<img src="{% static "images/fine.png" %}" alt="Picture of Room on Fire and Cartoon says Everything is Fine." />
 			</p>
+	</div>
 {% endblock %}

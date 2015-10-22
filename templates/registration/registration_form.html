@@ -2,7 +2,10 @@
 
 {% block body_block %}
 
-<h1>Register Here</h1>
+	<div class="page-header">
+			<h1>Register with Rango</h1>
+	</div>
+
 	<form method="post" action=".">
 		{% csrf_token %}
 		{{ form.as_p }}
