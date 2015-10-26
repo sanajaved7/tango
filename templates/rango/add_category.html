@@ -1,13 +1,11 @@
 {% extends 'rango/base.html' %}
 {% load staticfiles %}
 
+
+{% block title %}Add Category{% endblock %}
+
 {% block body_block %}
-	<div class="page-header">
-		<h1>Add A Category</h1>
-	</div>
-
-	<form id="category_form" method="POST" action="/rango/add_category/">
-
+	<form role="form" id="category_form" method="POST" action="/rango/add_category/">
 		{% csrf_token %}
 		{% for hidden in form.hidden_fields %}
 			{{ hidden }}
@@ -18,7 +16,7 @@
 			{{ field.help_text }}
 			{{ field }}
 		{% endfor %}
-	<input type='submit' name='submit' value='Create Category' />
+	<button class="btn btn-primary" type='submit' name='submit'>Create Category</button>
 	</form>
 	<br>
 {% endblock %}
